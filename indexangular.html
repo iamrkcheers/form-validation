@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Style Validation</title>
+    <script src="angular.min.js"></script>
+    <script>
+        var app=angular.module("app",[]);
+        app.controller("ctrl",function($scope){
+            $scope.submit=function(){
+                alert("Hello People !");
+            }
+        });
+    </script>
+    <style>
+        input.ng-valid{border: 3px solid green}
+        input.ng-invalid{border: 3px solid crimson}
+    </style>
+</head>
+<body ng-app="app" ng-controller="ctrl">
+    <form action="" name="myform" ng-submit="submit()" novalidate="novalidate">
+        Username : <input type="text" placeholder="Enter Username Here !" pattern="[a-z]{3}[0-9]{4}" required title="Incorrect Pattern !" name="usnm" ng-model="user"><br><br>
+        <span ng-show="myform.usnm.$touched && myform.usnm.$pristine">Fill this out before moving forward !</span><br><br>
+        <pre>
+            $touched : {{myform.usnm.$touched}}
+            $untouched : {{myform.usnm.$untouched}}
+            $pristine : {{myform.usnm.$pristine}}
+            $dirty : {{myform.usnm.$dirty}}
+            $valid : {{myform.usnm.$valid}}
+            $invalid : {{myform.usnm.$invalid}}
+            $error : {{myform.usnm.$error}}
+        </pre>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

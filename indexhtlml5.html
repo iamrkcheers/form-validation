@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Html 5 validation</title>
+</head>
+<body>
+   <form action="" novalidate>
+    First Name <input type="text" required pattern="[a-z]{3,12}" title="Use chars [a-z]; Min of 3 & Max of 12 chars !" placeholder="Enter First Name here"><br><br>
+    Email <input type="email" required placeholder="Enter Email here"><br><br>
+    Phone NO. <input type="text" required pattern="[8,9]{1}[0-9]{9}" title="Pattern not matching" placeholder="Enter Number here"><br><br>
+    <button type="submit">submit</button>
+    </form>
+</body>
+</html>
